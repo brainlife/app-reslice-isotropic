@@ -1,0 +1,5 @@
+{
+	"input":	"/input/data/t1.nii.gz"
+	"type":	"t1",
+	"voxel_dim":	1
+}
