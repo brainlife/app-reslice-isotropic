@@ -6,6 +6,6 @@ TYPE=`jq -r '.type' config.json`
 
 [ ! -d output ] && mkdir -p output && outdir="./output"
 
-[ ! -f ${outdir}/${type}.nii.gz ] && flirt -in ${input} -ref ${input} -out ${outdir}/${TYPE}.nii.gz -applyisoxfm ${voxel_dim}
+[ ! -f ${outdir}/${TYPE}.nii.gz ] && flirt -in ${input} -ref ${input} -out ${outdir}/${TYPE}.nii.gz -applyisoxfm ${voxel_dim}
 
-[ -f ${outdir}/${type}.nii.gz ] && echo "complete" && exit 0 || echo "something went wrong" && exit 1
+[ -f ${outdir}/${TYPE}.nii.gz ] && echo "complete" && exit 0 || echo "something went wrong" && exit 1
