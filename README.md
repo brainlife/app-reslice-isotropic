@@ -1,5 +1,5 @@
 [![Abcdspec-compliant](https://img.shields.io/badge/ABCD_Spec-v1.1-green.svg)](https://github.com/brain-life/abcd-spec)
-[![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-brainlife.app.379-blue.svg)](https://doi.org/10.25663/brainlife.app.690)
+[![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-brainlife.app.690-blue.svg)](https://doi.org/10.25663/brainlife.app.690)
 
 # app-reslice-isotropic
 This app will FSL's flirt command to resample T1w, T2w, or FLAIR acquistions into isotropic resolution. This is intended to be used for clinical datasets where where one plane might be high resolution and the others are low. This app will take in as input a clincal-grade T1w, T2w, or FLAIR sequence and resmaple to isotropic resolution, with voxel size based on user input, and output a corresponding isotropic iamge.
@@ -32,7 +32,7 @@ Avesani, P., McPherson, B., Hayashi, S. et al. The open diffusion data derivativ
 
 ### On Brainlife.io
 
-You can submit this App online at [https://doi.org/10.25663/brainlife.app.379](https://doi.org/10.25663/bl.app.690) via the "Execute" tab.
+You can submit this App online at [https://doi.org/10.25663/brainlife.app.690](https://doi.org/10.25663/bl.app.690) via the "Execute" tab.
 
 ### Running Locally (on your machine)
 
