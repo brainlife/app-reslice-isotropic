@@ -2,6 +2,38 @@
 [![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-brainlife.app.690-blue.svg)](https://doi.org/10.25663/brainlife.app.690)
 
 # app-reslice-isotropic
+
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+**Reslices a T2-weighted image to isotropic voxels of a chosen size with FSL flirt -applyisoxfm, for clinical scans with one high-resolution plane.**
+
+Runs FSL flirt with the image as its own reference and -applyisoxfm set to voxel_dim, writing output/t2.nii.gz. Intended for clinical-grade acquisitions where one plane is high resolution and the others are coarse. It only resamples; it does not register to another image.
+
+Run it on brainlife.io: [https://doi.org/10.25663/brainlife.app.691](https://doi.org/10.25663/brainlife.app.691)
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `input` | `neuro/anat/t2w` | yes | T2-weighted image to reslice. |
+
+| Output | Datatype | Description |
+|---|---|---|
+| `output` | `neuro/anat/t2w` | The T2-weighted image resampled to isotropic voxels. |
+
+| Parameter | Type | Default | Description |
+|---|---|---|---|
+| `voxel_dim` | number | `1` | Isotropic voxel size of the output (passed to flirt -applyisoxfm). |
+| `type` | string | `t2` | Name used for the output file (output/<type>.nii.gz); fixed to t2 for this App. |
+
+Runtime: container `brainlife/fsl:6.0.4-patched2`; 1 CPUs; 1.5 h walltime.
+
+Please cite:
+- Jenkinson M, Bannister P, Brady JM, Smith SM. Improved Optimisation for the Robust and Accurate Linear Registration and Motion Correction of Brain Images. NeuroImage 17(2):825-841 (2002).
+- Jenkinson M, Smith SM. A Global Optimisation Method for Robust Affine Registration of Brain Images. Medical Image Analysis 5(2):143-156 (2001).
+- Greve DN, Fischl B. Accurate and robust brain image alignment using boundary-based registration. NeuroImage 48(1):63-72 (2009).
+- Avesani P, McPherson B, Hayashi S, et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. Sci Data 6, 69 (2019). [doi:10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
+
+<!-- brainlife-app:end -->
+
 This app will FSL's flirt command to resample T1w, T2w, or FLAIR acquistions into isotropic resolution. This is intended to be used for clinical datasets where where one plane might be high resolution and the others are low. This app will take in as input a clincal-grade T1w, T2w, or FLAIR sequence and resmaple to isotropic resolution, with voxel size based on user input, and output a corresponding isotropic iamge.
 
 ### Authors
